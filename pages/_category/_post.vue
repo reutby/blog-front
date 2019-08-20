@@ -1,10 +1,8 @@
 <template>
   <article>
     <h1>{{metadata.title}}</h1>
-    <section class="short">
-      {{metadata.short}}
-    </section>
-    <section>{{metadata.content}}</section>
+    <section class="post-short" v-html="metadata.short"></section>
+    <section class="post-content" v-html="metadata.content"></section>
   </article>
 </template>
 
@@ -21,7 +19,10 @@
 </script>
 
 <style scoped>
-  .short {
+  .post-short {
     font-weight: bold;
+  }
+  .post-content {
+    padding: 20px;
   }
 </style>

@@ -1,13 +1,16 @@
 <template>
-  <Layout/>
+  <div>
+index page
+  </div>
 </template>
-<script>
-  import Layout from '~/themes/default/Layout';
 
+<script>
   export default {
     components: {
-      Layout
     }
   }
 </script>
 
+<style>
+
+</style>

@@ -1,28 +1,17 @@
 <template>
-  <article>
-    <h1>{{metadata.title}}</h1>
-    <section class="post-short" v-html="metadata.short"></section>
-    <section class="post-content" v-html="metadata.content"></section>
-  </article>
+	<Post :post="metadata"/>
 </template>
-
 <script>
-  import {createNamespacedHelpers} from 'vuex';
-  import {name, DATA} from '../../store/post/consts';
+	import {createNamespacedHelpers} from 'vuex';
+	import {name, DATA} from '../../store/post/consts';
+	import Post from '~/.current_theme/Post';
 
-  const {mapState} = createNamespacedHelpers(name);
 
-  export default {
-    middleware: 'load-post',
-    computed: mapState({metadata: DATA.METADATA})
-  }
+	const {mapState} = createNamespacedHelpers(name);
+
+	export default {
+		middleware: 'load-post',
+		computed: mapState({metadata: DATA.METADATA}),
+		components: {Post}
+	}
 </script>
-
-<style scoped>
-  .post-short {
-    font-weight: bold;
-  }
-  .post-content {
-    padding: 20px;
-  }
-</style>

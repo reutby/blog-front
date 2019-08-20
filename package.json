@@ -8,7 +8,8 @@
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
     "start": "cross-env NODE_ENV=production node server/index.js",
-    "generate": "nuxt generate"
+    "set-theme": "ln -s themes/default/ .current_theme",
+    "generate": "npm run set-theme && nuxt generate"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",

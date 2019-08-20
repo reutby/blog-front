@@ -1,29 +1,20 @@
 <template>
-  <div>
-    <h1>{{metadata.name}}</h1>
-
-    <section v-for="post in posts">
-      {{post.title}}
-      <nuxt-link :to="{params: {post: post.path}, name: 'category-post'}">link</nuxt-link>
-    </section>
-  </div>
+	<Category :category="metadata" :posts="posts"/>
 </template>
 
 <script>
-  import {createNamespacedHelpers} from 'vuex';
-  import {name, DATA} from '../../store/category/consts'
+	import {createNamespacedHelpers} from 'vuex';
+	import {name, DATA} from '../../store/category/consts';
+	import Category from '~/.current_theme/Category';
 
-  const {mapState} = createNamespacedHelpers(name);
+	const {mapState} = createNamespacedHelpers(name);
 
-  export default {
-    middleware: 'load-category',
-    computed: mapState({
-      metadata: DATA.METADATA,
-      posts: DATA.POSTS,
-    }),
-  }
+	export default {
+		middleware: 'load-category',
+		computed: mapState({
+			metadata: DATA.METADATA,
+			posts: DATA.POSTS,
+		}),
+		components: {Category}
+	}
 </script>
-
-<style>
-
-</style>

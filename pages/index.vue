@@ -1,16 +1,13 @@
 <template>
-  <div>
-
-  </div>
+	<Index/>
 </template>
 
 <script>
-  export default {
-    components: {
-    }
-  }
+	import Index from '~/.current_theme/Index';
+
+	export default {
+		components: {
+			Index,
+		}
+	}
 </script>
-
-<style>
-
-</style>

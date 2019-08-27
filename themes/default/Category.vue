@@ -3,8 +3,8 @@
 		<h1>{{category.name}}</h1>
 
 		<section v-for="post in posts">
-			{{post.title}}
-			<nuxt-link :to="{params: {post: post.path}, name: 'category-post'}">link</nuxt-link>
+			<nuxt-link :to="{params: {post: post.path}, name: 'category-post'}">{{post.title}}</nuxt-link>
+			<div v-html="post.short"></div>
 		</section>
 	</div>
 </template>
@@ -18,6 +18,14 @@
 	}
 </script>
 
-<style>
-
+<style scoped>
+	h1 {
+		padding: 10px;
+	}
+	section {
+		padding: 10px;
+		margin: 10px;
+		border-top: 1px solid #ccc;
+		border-radius: 5px;
+	}
 </style>

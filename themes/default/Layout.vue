@@ -8,8 +8,8 @@
 	</div>
 </template>
 <script>
-	import Logo from '~/components/Logo';
-	import MainMenu from '~/components/MainMenu';
+	import Logo from './components/Logo';
+	import MainMenu from './components/MainMenu';
 
 	export default {
 		components: {
@@ -36,5 +36,35 @@
 	*:after {
 		box-sizing: border-box;
 		margin: 0;
+	}
+
+	a {
+		color: #03414c;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+
+	header {
+		display: flex;
+		background-color: #d7e8e6;
+	}
+
+	@media all and (max-width: 500px) {
+		header {
+			flex-direction: column;
+		}
+		.logo {
+			width: 100%;
+		}
+	}
+	@media all and (min-width: 500px) {
+		header {
+			align-items: flex-end;
+		}
+		.logo {
+			height: 150px;
+		}
 	}
 </style>

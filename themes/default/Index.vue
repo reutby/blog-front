@@ -1,6 +1,8 @@
 <template>
   <div>
 index page
+
+    <p>this is default theme</p>
   </div>
 </template>
 

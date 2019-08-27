@@ -2,7 +2,7 @@
   <Layout/>
 </template>
 <script>
-  import Layout from '~/themes/default/Layout';
+  import Layout from '~/.current_theme/Layout';
 
   export default {
     components: {

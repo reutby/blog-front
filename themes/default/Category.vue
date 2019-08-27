@@ -15,6 +15,14 @@
 			category: Object,
 			posts: Array,
 		},
+		head() {
+			return {
+				title: this.category.name,
+				meta: [
+					{ vmid: 'description', name: 'description', content: this.category.name }
+				]
+			}
+		}
 	}
 </script>
 

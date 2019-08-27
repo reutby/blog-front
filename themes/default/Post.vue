@@ -16,7 +16,15 @@
 		props: {
 			post: Object,
 		},
-		components: {PostBreadcrumbs}
+		components: {PostBreadcrumbs},
+		head() {
+			return {
+				title: this.post.title + ' - ' + this.post.category.name,
+				meta: [
+					{ vmid: 'description', name: 'description', content: this.post.title }
+				]
+			}
+		}
 	}
 </script>
 

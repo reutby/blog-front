@@ -12,6 +12,12 @@
 	export default {
 		middleware: 'load-post',
 		computed: mapState({metadata: DATA.METADATA}),
-		components: {Post}
+		components: {Post},
+		metaInfo: {
+			title: 'demo title',
+			meta: [
+				{ vmid: 'description', name: 'description', content: 'demo text' }
+			]
+		}
 	}
 </script>

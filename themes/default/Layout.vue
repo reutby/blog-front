@@ -15,6 +15,9 @@
 		components: {
 			Logo,
 			MainMenu
+		},
+		head: {
+			titleTemplate: '%s | greenpress - powerful blog platform'
 		}
 	}
 </script>

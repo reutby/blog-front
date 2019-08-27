@@ -26,7 +26,7 @@
 		height: 35px;
 	}
 
-	a:hover {
+	a.nuxt-link-active, a:hover {
 		border-bottom: 1px solid #03414c;
 		text-decoration: none;
 	}

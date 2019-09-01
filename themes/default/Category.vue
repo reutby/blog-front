@@ -2,15 +2,15 @@
 	<div>
 		<h1>{{category.name}}</h1>
 
-		<section v-for="post in posts">
-			<nuxt-link :to="{params: {post: post.path}, name: 'category-post'}">{{post.title}}</nuxt-link>
-			<div v-html="post.short"></div>
-		</section>
+		<PostsList :posts="posts"/>
 	</div>
 </template>
 
 <script>
+	import PostsList from './components/PostsList';
+
 	export default {
+		components: {PostsList},
 		props: {
 			category: Object,
 			posts: Array,
@@ -19,7 +19,7 @@
 			return {
 				title: this.category.name,
 				meta: [
-					{ vmid: 'description', name: 'description', content: this.category.name }
+					{vmid: 'description', name: 'description', content: this.category.name}
 				]
 			}
 		}
@@ -30,6 +30,7 @@
 	h1 {
 		padding: 10px;
 	}
+
 	section {
 		padding: 10px;
 		margin: 10px;

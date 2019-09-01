@@ -1,8 +1,10 @@
 <template>
 	<div>
 		<PostBreadcrumbs :post="post"/>
-		<article>
+		<article class="post">
 			<h1>{{post.title}}</h1>
+			<small class="created">{{post.created | dateTime}}</small>
+
 			<section class="post-short" v-html="post.short"></section>
 			<section class="post-content" v-html="post.content"></section>
 		</article>
@@ -29,11 +31,13 @@
 </script>
 
 <style scoped>
-	.post-short {
-		font-weight: bold;
+	.post {
+		padding: 10px;
 	}
 
-	.post-content {
-		padding: 20px;
+	.post-short {
+		font-weight: bold;
+		padding-top: 10px;
+		padding-bottom: 10px;
 	}
 </style>

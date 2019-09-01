@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
-    "build": "nuxt build",
-    "prestart": "npm run set-theme && npm run build",
+    "build": "npm run set-theme && nuxt build",
+    "postinstall": "npm run build",
     "start": "cross-env NODE_ENV=production node server/index.js",
     "set-theme": "node ./helpers/set-theme.js",
     "generate": "npm run set-theme && nuxt generate"

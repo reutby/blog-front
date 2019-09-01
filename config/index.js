@@ -1,4 +1,5 @@
 module.exports = {
+  port: process.env.PORT || 3000,
   contentService: {
     protocol: process.env.CONTENT_SERVICE_PROTOCOL || 'http',
     url: process.env.CONTENT_SERVICE_URL || 'localhost',

@@ -1,5 +1,5 @@
 const proxy = require('http-proxy-middleware');
-const {authService, contentService} = require('../config');
+const {authService, contentService, adminPanel} = require('../config');
 
 /**
  * This function is a temporary thingy because I'm too lazy right now
@@ -8,22 +8,28 @@ const {authService, contentService} = require('../config');
  * @param app: Express.Application
  */
 module.exports = function apiProxy(app) {
-  const authProxy = proxy({
-    target: `${authService.protocol}://${authService.url}:${authService.port}`,
-    changeOrigin: true
-  });
-  const contentProxy = proxy({
-    target: `${contentService.protocol}://${contentService.url}:${contentService.port}`,
-    changeOrigin: true
-  });
+	const authProxy = proxy({
+		target: `${authService.protocol}://${authService.url}:${authService.port}`,
+		changeOrigin: true
+	});
+	const contentProxy = proxy({
+		target: `${contentService.protocol}://${contentService.url}:${contentService.port}`,
+		changeOrigin: true
+	});
 
-  app
-    .use('/api/signin', authProxy)
-    .use('/api/signup', authProxy)
-    .use('/api/token', authProxy)
-    .use('/api/me', authProxy)
-    .use('/api/users', authProxy)
-    .use('/api/categories', contentProxy)
-    .use('/api/posts', contentProxy)
-    .use('/api/menus', contentProxy)
+	const adminProxy = proxy({
+		target: `${adminPanel.protocol}://${adminPanel.url}:${adminPanel.port}`,
+		changeOrigin: true
+	});
+
+	app
+		.use('/api/signin', authProxy)
+		.use('/api/signup', authProxy)
+		.use('/api/token', authProxy)
+		.use('/api/me', authProxy)
+		.use('/api/users', authProxy)
+		.use('/api/categories', contentProxy)
+		.use('/api/posts', contentProxy)
+		.use('/api/menus', contentProxy)
+		.use('/gp-admin', adminProxy)
 };

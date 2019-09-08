@@ -1,5 +1,5 @@
-const proxy = require('http-proxy-middleware');
-const {authService, contentService, adminPanel} = require('../config');
+const proxy = require('http-proxy-middleware')
+const { authService, contentService, adminPanel } = require('../config')
 
 /**
  * This function is a temporary thingy because I'm too lazy right now
@@ -7,29 +7,28 @@ const {authService, contentService, adminPanel} = require('../config');
  * when the nginx router will be added - this file can be removed.
  * @param app: Express.Application
  */
-module.exports = function apiProxy(app) {
+module.exports = function apiProxy (app) {
 	const authProxy = proxy({
 		target: `${authService.protocol}://${authService.url}:${authService.port}`,
 		changeOrigin: true
-	});
+	})
 	const contentProxy = proxy({
 		target: `${contentService.protocol}://${contentService.url}:${contentService.port}`,
 		changeOrigin: true
-	});
+	})
 
 	const adminProxy = proxy({
 		target: `${adminPanel.protocol}://${adminPanel.url}:${adminPanel.port}`,
 		changeOrigin: true
-	});
+	})
 
-	app
-		.use('/api/signin', authProxy)
-		.use('/api/signup', authProxy)
-		.use('/api/token', authProxy)
-		.use('/api/me', authProxy)
-		.use('/api/users', authProxy)
-		.use('/api/categories', contentProxy)
-		.use('/api/posts', contentProxy)
-		.use('/api/menus', contentProxy)
-		.use('/gp-admin', adminProxy)
-};
+	app.use('/api/signin', authProxy)
+	app.use('/api/signup', authProxy)
+	app.use('/api/token', authProxy)
+	app.use('/api/me', authProxy)
+	app.use('/api/users', authProxy)
+	app.use('/api/categories', contentProxy)
+	app.use('/api/posts', contentProxy)
+	app.use('/api/menus', contentProxy)
+	app.use('/gp-admin', adminProxy)
+}

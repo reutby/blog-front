@@ -1,22 +1,23 @@
 <template>
 	<div class="menu-wrapper">
 		<div class="menu">
-			<nuxt-link v-for="(item, index) of menu" :to="item.route" :key="index">{{item.name}}
-			</nuxt-link>
+			<menuLink v-for="(item, index) of menu" :link="item" :key="index" class="link"/>
 		</div>
 	</div>
 </template>
 <script>
-	import {createNamespacedHelpers} from 'vuex';
-	import {name, GETTERS} from '../../../store/menus/consts';
+  import { createNamespacedHelpers } from 'vuex'
+  import { name, GETTERS } from '../../../store/menus/consts'
+  import MenuLink from '../../../components/MenuLink'
 
-	const {mapGetters} = createNamespacedHelpers(name);
+  const { mapGetters } = createNamespacedHelpers(name)
 
-	export default {
-		computed: {
-			...mapGetters({menu: GETTERS.MAIN_MENU_LINKS})
-		},
-	}
+  export default {
+    components: { MenuLink },
+    computed: {
+      ...mapGetters({ menu: GETTERS.MAIN_MENU_LINKS })
+    },
+  }
 </script>
 <style scoped>
 	.menu-wrapper {
@@ -24,18 +25,20 @@
 		overflow: auto;
 
 	}
+
 	.menu {
 		flex-wrap: nowrap;
 		display: flex;
 	}
 
-	a {
+	.link >>> a {
+		display: block;
 		padding: 5px 10px;
 		height: 35px;
 		white-space: nowrap;
 	}
 
-	a.nuxt-link-active, a:hover {
+	.link >>> a.nuxt-link-active, .link >>> a:hover {
 		border-bottom: 1px solid #03414c;
 		text-decoration: none;
 	}

@@ -5,21 +5,24 @@
 			<MainMenu/>
 		</header>
 		<nuxt/>
+		<Footer/>
 	</div>
 </template>
 <script>
-	import Logo from './components/Logo';
-	import MainMenu from './components/MainMenu';
+  import Logo from './components/Logo'
+  import MainMenu from './components/MainMenu'
+  import Footer from './components/Footer'
 
-	export default {
-		components: {
-			Logo,
-			MainMenu
-		},
-		head: {
-			titleTemplate: '%s | greenpress - powerful blog platform'
-		}
-	}
+  export default {
+    components: {
+      Logo,
+      MainMenu,
+      Footer
+    },
+    head: {
+      titleTemplate: '%s | greenpress - powerful blog platform'
+    }
+  }
 </script>
 <style>
 	html {
@@ -45,6 +48,7 @@
 		color: #03414c;
 		text-decoration: none;
 	}
+
 	a:hover {
 		text-decoration: underline;
 	}
@@ -58,14 +62,17 @@
 		header {
 			flex-direction: column;
 		}
+
 		.logo {
 			width: 100%;
 		}
 	}
+
 	@media all and (min-width: 500px) {
 		header {
 			align-items: flex-end;
 		}
+
 		.logo {
 			height: 150px;
 		}

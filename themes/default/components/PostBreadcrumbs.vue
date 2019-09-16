@@ -6,14 +6,14 @@
 	</div>
 </template>
 <script>
-	export default {
-		props: {
-			post: Object,
-		},
-	}
+  export default {
+    props: {
+      post: Object,
+    },
+  }
 </script>
 <style scoped>
 	.breadcrumbs {
-		padding: 10px;
+		padding-bottom: 10px;
 	}
 </style>

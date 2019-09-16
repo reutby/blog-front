@@ -1,33 +1,40 @@
 <template>
-	<div>
+	<div class="post">
 		<PostBreadcrumbs :post="post"/>
-		<article class="post">
+		<article>
 			<h1>{{post.title}}</h1>
-			<small class="created">{{post.created | dateTime}}</small>
-
-			<section class="post-short" v-html="post.short"></section>
+			<p>
+				<small>{{authors}} | {{post.created | dateTime}}</small>
+			</p>
 			<section class="post-content" v-html="post.content"></section>
 		</article>
+		<PostComments/>
 	</div>
 </template>
 
 <script>
-	import PostBreadcrumbs from './components/PostBreadcrumbs';
+  import PostBreadcrumbs from './components/PostBreadcrumbs'
+  import PostComments from './components/PostComments'
 
-	export default {
-		props: {
-			post: Object,
-		},
-		components: {PostBreadcrumbs},
-		head() {
-			return {
-				title: this.post.title + ' - ' + this.post.category.name,
-				meta: [
-					{ vmid: 'description', name: 'description', content: this.post.title }
-				]
-			}
-		}
-	}
+  export default {
+    props: {
+      post: Object,
+    },
+    components: { PostComments, PostBreadcrumbs },
+    computed: {
+      authors () {
+        return this.post.authors ? this.post.authors.map(a => a.name).join(', ') : ''
+      }
+    },
+    head () {
+      return {
+        title: this.post.title + ' - ' + this.post.category.name,
+        meta: [
+          { vmid: 'description', name: 'description', content: this.post.title }
+        ]
+      }
+    }
+  }
 </script>
 
 <style scoped>
@@ -35,9 +42,7 @@
 		padding: 10px;
 	}
 
-	.post-short {
-		font-weight: bold;
-		padding-top: 10px;
-		padding-bottom: 10px;
+	.post-content {
+		padding: 10px 0;
 	}
 </style>

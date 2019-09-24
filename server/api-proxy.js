@@ -22,6 +22,12 @@ module.exports = function apiProxy (app) {
 		changeOrigin: true
 	})
 
+
+	const assetsProxy = proxy({
+		target: `${adminPanel.protocol}://${adminPanel.url}:${adminPanel.port}`,
+		changeOrigin: true
+	})
+
 	app.use('/api/signin', authProxy)
 	app.use('/api/signup', authProxy)
 	app.use('/api/token', authProxy)

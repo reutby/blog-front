@@ -8,7 +8,7 @@
 			</p>
 			<section class="post-content" v-html="post.content"></section>
 		</article>
-		<PostComments/>
+		<PostComments :comments="comments"/>
 	</div>
 </template>
 
@@ -19,6 +19,7 @@
   export default {
     props: {
       post: Object,
+      comments: Array
     },
     components: { PostComments, PostBreadcrumbs },
     computed: {

@@ -6,7 +6,6 @@
 	import {name, DATA} from '../../store/post/consts';
 	import Post from '~/.current_theme/Post';
 
-
 	const {mapState} = createNamespacedHelpers(name);
 
 	export default {

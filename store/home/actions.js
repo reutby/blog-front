@@ -7,7 +7,7 @@ export default {
     ]);
   },
   [ACTIONS.LOAD_POSTS]({commit}) {
-    return this.$axios.$get(`api/posts`)
+    return this.$axios.$get(`api/posts?isPublic=true`)
         .then(list => commit(MUTATIONS.SET_POSTS, list));
   },
 };

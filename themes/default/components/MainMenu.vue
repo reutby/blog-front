@@ -31,14 +31,14 @@
 		display: flex;
 	}
 
-	.link >>> a {
+	.link /deep/ a {
 		display: block;
 		padding: 5px 10px;
 		height: 35px;
 		white-space: nowrap;
 	}
 
-	.link >>> a.nuxt-link-active, .link >>> a:hover {
+	.link /deep/ a.nuxt-link-active, .link /deep/ a:hover {
 		border-bottom: 1px solid #03414c;
 		text-decoration: none;
 	}

@@ -48,13 +48,22 @@
 				margin-top: $box-size / 2.5;
 				height: $box-size / 1.65;
 			}
+
+			img {
+				top: -2%;
+				left: -2%;
+				width: 104%;
+			}
 		}
 	}
 
 	img {
-		max-width: 150%;
-		max-height: 150%;
+		top: -1%;
+		left: -1%;
+		width: 102%;
 		position: absolute;
+		z-index: -1;
+		transition: all 0.2s ease-in-out;
 	}
 
 	.content {

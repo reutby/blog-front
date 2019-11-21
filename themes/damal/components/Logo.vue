@@ -9,4 +9,11 @@
 	.logo {
 		width: 150px;
 	}
+
+
+	@media mobile, (max-width: 600px) {
+		.logo {
+			width: 100%;
+		}
+	}
 </style>

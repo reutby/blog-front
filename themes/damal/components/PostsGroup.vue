@@ -42,7 +42,20 @@
 		}
 	}
 
-	.posts-group {
-		margin: 10px 0;
+
+	@media screen and (max-width: 600px) {
+		.row {
+			flex-direction: column;
+			&.two-in-row, &.three-in-row {
+				> * {
+					width: 95%;
+				}
+			}
+		}
+		.posts-group {
+			margin: 0;
+		}
 	}
+
+
 </style>

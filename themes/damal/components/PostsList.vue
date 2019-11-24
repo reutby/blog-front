@@ -38,7 +38,7 @@
 	img {
 		padding-right: 20px;
 		width: 200px;
-		height :auto;
+		height: auto;
 		max-height: 300px;
 	}
 

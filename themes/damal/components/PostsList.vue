@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<section v-for="post in posts" :key="post._id">
-			<img v-if="post.thumbnail" :src="post.thumbnail">
+			<div v-if="post.thumbnail"><img :src="post.thumbnail"></div>
 			<div>
 				<h3>
 					<nuxt-link :to="{params: {post: post.path, category: post.category}, name: 'category-post'}">
@@ -38,8 +38,6 @@
 	img {
 		padding-right: 20px;
 		width: 200px;
-		height: auto;
-		max-height: 300px;
 	}
 
 	.created {

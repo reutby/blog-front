@@ -1,40 +1,47 @@
 <template>
 	<div>
 		<section v-for="post in posts" :key="post._id">
-			<h3>
-				<nuxt-link :to="{params: {post: post.path, category: post.category}, name: 'category-post'}">{{post.title}}</nuxt-link>
-			</h3>
-			<small class="created">{{post.created | dateTime}}</small>
-			<div class="short" v-html="post.short"></div>
+			<img v-if="post.thumbnail" :src="post.thumbnail"/>
+			<div>
+				<h3>
+					<nuxt-link :to="{params: {post: post.path, category: post.category}, name: 'category-post'}">
+						{{post.title}}
+					</nuxt-link>
+				</h3>
+				<small class="created">{{post.created | dateTime}}</small>
+				<div class="short" v-html="post.short"></div>
+			</div>
 		</section>
 	</div>
 </template>
 
 <script>
-	export default {
-		props: {
-			posts: Array,
-		},
-	}
+  export default {
+    props: {
+      posts: Array,
+    },
+  }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 	section {
 		padding: 10px;
-		margin: 10px;
-		border-top: 1px solid #ccc;
-		border-radius: 5px;
+		margin: 10px 0;
+		display: flex;
+		flex-direction: row;
+
+		&:nth-child(2n) {
+			background-color: #ddd;
+		}
 	}
 
-	h3 {
-		font-style: italic;
+	img {
+		padding-right: 20px;
+		width: 200px;
 	}
 
 	.created {
-		color: #03414c;
-		display: block;
 		font-size: 70%;
-		font-style: italic;
 	}
 
 	.short {

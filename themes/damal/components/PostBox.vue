@@ -9,6 +9,7 @@
 				</nuxt-link>
 			</h3>
 			<small class="created">{{post.created | dateTime}}</small>
+			<div class="short" v-html="post.short"></div>
 		</div>
 	</section>
 </template>
@@ -33,7 +34,7 @@
 <style scoped lang="scss">
 	@import "../colors";
 
-	$box-size: 200px;
+	$box-size: 210px;
 
 	section {
 		position: relative;
@@ -45,8 +46,8 @@
 
 		&:hover {
 			.content {
-				margin-top: $box-size / 2.5;
-				height: $box-size / 1.65;
+				margin-top: $box-size / 4.3;
+				height: $box-size / 1.3;
 			}
 
 			img {
@@ -67,9 +68,9 @@
 	}
 
 	.content {
-		margin-top: $box-size / 2;
+		margin-top: $box-size / 2.4;
 		padding: 10px;
-		height: $box-size / 2;
+		height: $box-size / 1.7;
 		background-color: rgba(0, 0, 0, 0.5);
 		transition: all 0.3s ease-in-out;
 
@@ -79,8 +80,17 @@
 			}
 		}
 
+		small {
+			font-size: 70%;
+			color: #ddd;
+		}
+
 		.created {
 			color: #ddd;
+		}
+
+		.short {
+			color: #fff;
 		}
 	}
 </style>

@@ -8,17 +8,19 @@
 			</p>
 			<section class="post-content" v-html="post.content"></section>
 		</article>
+		<SharePost :post="post"/>
 	</div>
 </template>
 
 <script>
   import PostBreadcrumbs from './components/PostBreadcrumbs'
+  import SharePost from './components/SharePost'
 
   export default {
     props: {
       post: Object,
     },
-    components: { PostBreadcrumbs },
+    components: { SharePost, PostBreadcrumbs },
     computed: {
       authors () {
         return this.post.authors ? this.post.authors.map(a => a.name).join(', ') : ''

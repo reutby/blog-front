@@ -35,6 +35,7 @@ module.exports = function apiProxy (app) {
   app.use('/api/categories', contentProxy)
   app.use('/api/posts', contentProxy)
   app.use('/api/menus', contentProxy)
+  app.use('/api/tags', contentProxy)
   app.use('/api/assets', assetsProxy)
   app.use('/gp-admin', adminProxy)
 }

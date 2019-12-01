@@ -4,7 +4,8 @@
 			<img v-if="post.thumbnail" :src="post.thumbnail"/>
 			<div>
 				<h3>
-					<nuxt-link :to="{params: {post: post.path, category: post.category}, name: 'category-post'}">
+					<nuxt-link
+							:to="{params: {post: post.path, category: post.category.path ? post.category.path : post.category}, name: 'category-post'}">
 						{{post.title}}
 					</nuxt-link>
 				</h3>

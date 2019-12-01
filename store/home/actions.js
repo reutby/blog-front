@@ -1,13 +1,18 @@
-import {MUTATIONS, ACTIONS} from './consts';
+import { MUTATIONS, ACTIONS } from './consts'
 
 export default {
-  [ACTIONS.INIT]({dispatch}) {
+  [ACTIONS.INIT] ({ dispatch }) {
     return Promise.all([
       dispatch(ACTIONS.LOAD_POSTS),
-    ]);
+      dispatch(ACTIONS.LOAD_TAGS),
+    ])
   },
-  [ACTIONS.LOAD_POSTS]({commit}) {
+  [ACTIONS.LOAD_POSTS] ({ commit }) {
     return this.$axios.$get(`api/posts?isPublic=true`)
-        .then(list => commit(MUTATIONS.SET_POSTS, list));
+      .then(list => commit(MUTATIONS.SET_POSTS, list))
   },
-};
+  [ACTIONS.LOAD_TAGS] ({ commit }) {
+    return this.$axios.$get(`api/tags`)
+      .then(list => commit(MUTATIONS.SET_TAGS, list))
+  },
+}

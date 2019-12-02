@@ -20,13 +20,15 @@
       Footer
     },
     head: {
-      titleTemplate: '%s | greenpress - powerful blog platform'
+      titleTemplate: '%s | greenpress - powerful blog platform',
+      link: [
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Pontano+Sans&display=swap' }
+      ]
     }
   }
 </script>
 <style lang="scss">
 	@import "colors";
-	@import url('https://fonts.googleapis.com/css?family=Pontano+Sans&display=swap');
 
 	html {
 		font-family: 'Pontano Sans', sans-serif;

@@ -1,13 +1,13 @@
 <template>
 	<div>
-		<h1>{{tag}}</h1>
+		<h1>Tag: {{tag}}</h1>
 		<PostsList :posts="posts"/>
 	</div>
 </template>
 
 <script>
-
   import PostsList from '../default/components/PostsList'
+
   export default {
     components: { PostsList },
     props: {

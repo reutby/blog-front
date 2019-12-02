@@ -26,10 +26,10 @@
 </script>
 <style lang="scss">
 	@import "colors";
-	@import url('https://fonts.googleapis.com/css?family=Assistant&display=swap');
+	@import url('https://fonts.googleapis.com/css?family=Pontano+Sans&display=swap');
 
 	html {
-		font-family: 'Assistant', sans-serif;
+		font-family: 'Pontano Sans', sans-serif;
 		font-size: 16px;
 	}
 

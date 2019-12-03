@@ -6,14 +6,20 @@
 		display: block;
 		padding: 10px 0;
 	}
+
 	.logo {
 		width: 150px;
 	}
 
 
 	@media mobile, (max-width: 600px) {
+		a {
+			text-align: center;
+		}
+
 		.logo {
-			width: 100%;
+			max-width: 100%;
+			max-height: 100px;
 		}
 	}
 </style>

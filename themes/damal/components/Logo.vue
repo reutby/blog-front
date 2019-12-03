@@ -3,7 +3,7 @@
 </template>
 <style scoped>
 	a {
-		display: flex;
+		display: block;
 		padding: 10px 0;
 	}
 	.logo {

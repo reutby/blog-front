@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import PostsList from '../default/components/PostsList'
+  import PostsList from './components/PostsList'
 
   export default {
     components: { PostsList },

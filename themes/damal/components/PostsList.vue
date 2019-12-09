@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<section v-for="post in posts" :key="post._id">
-			<div v-if="post.thumbnail"><img :src="post.thumbnail"></div>
+			<div v-if="post.thumbnail"><img :src="post.thumbnail" :alt="post.title"></div>
 			<div>
 				<h3>
 					<nuxt-link :to="{params: {post: post.path, category: post.category.path || post.category}, name: 'category-post'}">

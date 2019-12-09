@@ -6,6 +6,7 @@
 		</header>
 		<nuxt/>
 		<Footer/>
+		<div id="fb-root"></div>
 	</div>
 </template>
 <script>

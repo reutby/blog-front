@@ -6,10 +6,11 @@
 			<p>
 				<small>{{authors}} | {{post.created | dateTime}}</small>
 			</p>
-			<section class="post-content" v-html="post.content"></section>
+			<section class="post-content" v-html="post.content"/>
 		</article>
 		<div class="tags-container" v-if="post.tags.length"><div>Related tags:&nbsp;</div><Tags :tags="post.tags"/></div>
 		<SharePost :post="post"/>
+		<PostComments :post="post"/>
 	</div>
 </template>
 
@@ -17,12 +18,13 @@
   import PostBreadcrumbs from './components/PostBreadcrumbs'
   import SharePost from './components/SharePost'
   import Tags from './components/Tags'
+  import PostComments from './components/PostComments'
 
   export default {
     props: {
       post: Object,
     },
-    components: { Tags, SharePost, PostBreadcrumbs },
+    components: { PostComments, Tags, SharePost, PostBreadcrumbs },
     computed: {
       authors () {
         return this.post.authors ? this.post.authors.map(a => a.name).join(', ') : ''

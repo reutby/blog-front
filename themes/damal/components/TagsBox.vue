@@ -8,17 +8,19 @@
 	</div>
 </template>
 <script>
+  import { computed } from '@vue/composition-api'
+
   export default {
     props: {
       tags: Array,
     },
-    computed: {
-      bigger () {
-        const biggest = this.tags[0]
-        return biggest && biggest.count
-      },
-      alphabetTags () {
-        return [].concat(this.tags).sort((a, b) => a._id > b._id ? 1 : -1)
+    setup (props) {
+      return {
+        bigger: computed(() => {
+          const biggest = props.tags[0]
+          return biggest && biggest.count
+        }),
+        alphabetTags: computed(() => [].concat(props.tags).sort((a, b) => a._id > b._id ? 1 : -1))
       }
     }
   }

@@ -22,11 +22,15 @@
     props: {
       post: Object,
     },
-    methods: {
-      navigate (e) {
+    setup (props, {root}) {
+      function navigate (e) {
         if (e.target.tagName.toLowerCase() !== 'a') {
-          this.$router.push({ params: { post: this.post.path, category: this.post.category }, name: 'category-post' })
+          root.$router.push({ params: { post: props.post.path, category: props.post.category }, name: 'category-post' })
         }
+      }
+
+      return {
+        navigate
       }
     }
   }

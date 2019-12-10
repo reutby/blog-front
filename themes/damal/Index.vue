@@ -9,6 +9,7 @@
   import TopPostsGroup from './components/TopPostsGroup'
   import PostsList from './components/PostsList'
   import TagsBox from './components/TagsBox'
+  import { computed } from '@vue/composition-api'
 
   export default {
     props: {
@@ -16,13 +17,17 @@
       tags: Array
     },
     components: { TagsBox, PostsList, TopPostsGroup },
-    computed: {
-      topPosts () {
-        return this.posts ? this.posts.filter((post, index) => index < 5) : []
-      },
-      otherPosts () {
-        const [a, b, c, d, e, ...otherPosts] = this.posts || []
+    setup (props) {
+      const topPosts = computed(() => {
+        return props.posts ? props.posts.filter((post, index) => index < 5) : []
+      })
+      const otherPosts = computed(() => {
+        const [a, b, c, d, e, ...otherPosts] = props.posts || []
         return otherPosts
+      })
+      return {
+        topPosts,
+        otherPosts
       }
     }
   }

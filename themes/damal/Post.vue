@@ -19,15 +19,16 @@
   import SharePost from './components/SharePost'
   import Tags from './components/Tags'
   import PostComments from './components/PostComments'
+  import { computed } from '@vue/composition-api'
 
   export default {
     props: {
       post: Object,
     },
     components: { PostComments, Tags, SharePost, PostBreadcrumbs },
-    computed: {
-      authors () {
-        return this.post.authors ? this.post.authors.map(a => a.name).join(', ') : ''
+    setup(props) {
+      return {
+        authors: computed(() => props.post.authors ? props.post.authors.map(a => a.name).join(', ') : '')
       }
     },
     head () {

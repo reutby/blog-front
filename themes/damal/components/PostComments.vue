@@ -7,24 +7,27 @@
 	</div>
 </template>
 <script>
+  import { computed, watch } from '@vue/composition-api'
+  import { isFrontMounted } from '../compositions/front-mounted'
+
   export default {
     name: 'PostComments',
     props: {
       post: Object,
     },
-    data () {
-      return { isMounted: false }
-    },
-    computed: {
-      href () {
-        return location.href
-      }
-    },
-    async mounted () {
-      this.isMounted = true
-      await this.$nextTick()
-      if (window.FB) {
-        window.FB.XFBML.parse()
+    setup (props, { root }) {
+      const href = computed(() => location.href)
+      const isMounted = isFrontMounted()
+
+      watch(() => isMounted.value, async () => {
+        await root.$nextTick()
+        if (window.FB) {
+          window.FB.XFBML.parse()
+        }
+      })
+      return {
+        href,
+        isMounted
       }
     },
     head () {

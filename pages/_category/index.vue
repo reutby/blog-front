@@ -3,18 +3,13 @@
 </template>
 
 <script>
-	import {createNamespacedHelpers} from 'vuex';
-	import {name, DATA} from '../../store/category/consts';
-	import Category from '~/.current_theme/Category';
+  import Category from '~/.current_theme/Category'
+  import getCategoryState from '../../compositions/category-state'
 
-	const {mapState} = createNamespacedHelpers(name);
-
-	export default {
-		middleware: 'load-category',
-		computed: mapState({
-			metadata: DATA.METADATA,
-			posts: DATA.POSTS,
-		}),
-		components: {Category}
-	}
+  export default {
+    components: { Category },
+    setup (_, { root: { $route, $store } }) {
+      return getCategoryState($store, $route.params.category)
+    }
+  }
 </script>

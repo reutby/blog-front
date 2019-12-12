@@ -1,8 +1,12 @@
 <template>
 	<div>
-		<TopPostsGroup :posts="topPosts"/>
-		<TagsBox :tags="tags"/>
-		<PostsList :posts="otherPosts"/>
+		<template v-if="posts && !posts.length">No posts yet.</template>
+		<template v-if="posts && posts.length">
+			<TopPostsGroup :posts="topPosts"/>
+			<TagsBox :tags="tags"/>
+			<PostsList :posts="otherPosts"/>
+		</template>
+		<template v-else>Loading..</template>
 	</div>
 </template>
 <script>

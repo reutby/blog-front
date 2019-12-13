@@ -3,15 +3,13 @@
 </template>
 
 <script>
-  import { createNamespacedHelpers } from 'vuex'
-  import { name, DATA } from '../../store/tag/consts'
   import Tag from '~/.current_theme/Tag'
-
-  const { mapState } = createNamespacedHelpers(name)
+  import getTagPosts from '../../compositions/tag-posts'
 
   export default {
     components: { Tag },
-    middleware: 'load-tag-posts',
-    computed: mapState({ posts: DATA.POSTS }),
+    setup (_, { root: { $route, $store } }) {
+      return getTagPosts($store, $route.params.tag)
+    },
   }
 </script>

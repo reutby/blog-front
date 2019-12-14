@@ -6,6 +6,7 @@ FROM node:alpine
 RUN mkdir /app
 WORKDIR /app
 ENV PORT=3000
+ENV THEME=damal
 COPY --from=nodeNpm node_modules node_modules 
 COPY . .
 EXPOSE $PORT

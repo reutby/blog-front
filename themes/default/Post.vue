@@ -6,7 +6,7 @@
 			<p>
 				<small>{{authors}} | {{post.created | dateTime}}</small>
 			</p>
-			<section class="post-content" v-html="post.content"></section>
+			<section class="post-content" v-for="(content, index) in post.contents" :key="index" v-html="content"/>
 		</article>
 		<PostComments :comments="comments"/>
 	</div>

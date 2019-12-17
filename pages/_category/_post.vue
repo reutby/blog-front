@@ -12,13 +12,15 @@
     middleware: 'load-post',
     computed: mapState({ metadata: DATA.METADATA }),
     components: { Post },
-    metaInfo: {
-      title () {
-        return this.metadata.title
-      },
-      meta: [
-        { vmid: 'description', name: 'description', content: this.metadata.title }
-      ]
+    metaInfo() {
+      return {
+        title () {
+          return this.metadata.title
+        },
+        meta: [
+          { vmid: 'description', name: 'description', content: this.metadata.title }
+        ]
+      }
     }
   }
 </script>

@@ -6,7 +6,11 @@
 			<p>
 				<small>{{authors}} | {{post.created | dateTime}}</small>
 			</p>
-			<section class="post-content" v-html="post.content"/>
+			<section class="post-content"
+			         v-for="(content, index) in post.contents"
+			         :key="index"
+			         v-html="content">
+			</section>
 		</article>
 		<div class="tags-container" v-if="post.tags.length"><div>Related tags:&nbsp;</div><Tags :tags="post.tags"/></div>
 		<SharePost :post="post"/>

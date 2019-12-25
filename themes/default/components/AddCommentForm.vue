@@ -1,7 +1,7 @@
 <template>
 	<form @submit.prevent="$emit('submit', content)">
 		<div>
-			<label><textarea v-model="content"></textarea></label>
+			<label><textarea v-model="content"/></label>
 		</div>
 		<button type="submit">Add Comment</button>
 	</form>

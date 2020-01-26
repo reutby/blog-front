@@ -32,6 +32,7 @@ module.exports = function apiProxy (app) {
   app.use('/api/token', authProxy)
   app.use('/api/me', authProxy)
   app.use('/api/users', authProxy)
+  app.use('/api/verification', authProxy)
   app.use('/api/categories', contentProxy)
   app.use('/api/posts', contentProxy)
   app.use('/api/menus', contentProxy)

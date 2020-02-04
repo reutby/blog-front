@@ -67,5 +67,8 @@ module.exports = {
   },
   extractCSS: {
     allChunks: true
+  },
+  render: {
+    http2: { push: true }
   }
 }

@@ -21,7 +21,7 @@
 
       watch(() => isMounted.value, async () => {
         await root.$nextTick()
-        if (window.FB) {
+        if (isMounted.value && window.FB) {
           window.FB.XFBML.parse()
         }
       })

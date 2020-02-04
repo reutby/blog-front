@@ -1,8 +1,8 @@
-import {MUTATIONS} from './consts';
+import { MUTATIONS, ACTIONS } from './consts'
 
-export default  {
-  nuxtServerInit({commit}) {
+export default {
+  [ACTIONS.FETCH_MENU_LINKS] ({ commit }) {
     return this.$axios.$get('api/menus/main')
-      .then(menu => commit(MUTATIONS.SET_MAIN_MENU, menu));
+      .then(menu => commit(MUTATIONS.SET_MAIN_MENU, menu))
   }
-};
+}

@@ -12,9 +12,10 @@
 	}
 
 
-	@media mobile, (max-width: 600px) {
+	@media all and (max-width: 720px) {
 		a {
 			text-align: center;
+			flex: 1;
 		}
 
 		.logo {

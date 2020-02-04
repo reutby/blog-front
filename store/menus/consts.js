@@ -5,6 +5,11 @@ export const DATA = {
 };
 
 
+export const ACTIONS = {
+  FETCH_MENU_LINKS: 'FETCH_MENU_LINKS',
+};
+
+
 export const GETTERS = {
   MAIN_MENU_LINKS: 'MAIN_MENU_LINKS',
 };

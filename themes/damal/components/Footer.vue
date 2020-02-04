@@ -1,5 +1,5 @@
 <template>
-	<footer>All rights reserved &copy; greenpress 2019.</footer>
+	<footer>Powered by &copy; Greenpress 2019.</footer>
 </template>
 <style scoped lang="scss">
 	@import "../colors";

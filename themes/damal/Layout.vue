@@ -1,23 +1,18 @@
 <template>
 	<div class="app">
-		<header>
-			<Logo/>
-			<MainMenu/>
-		</header>
+		<Header/>
 		<nuxt/>
 		<Footer/>
 		<div id="fb-root"></div>
 	</div>
 </template>
 <script>
-  import Logo from './components/Logo'
-  import MainMenu from './components/MainMenu'
   import Footer from './components/Footer'
+  import Header from './components/Header'
 
   export default {
     components: {
-      Logo,
-      MainMenu,
+      Header,
       Footer
     },
     head: {
@@ -50,11 +45,6 @@
 
 	a:hover {
 		text-decoration: underline;
-	}
-
-	header {
-		display: flex;
-		flex-direction: column;
 	}
 
 	@media all and (min-width: 500px) {

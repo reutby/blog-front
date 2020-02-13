@@ -27,16 +27,24 @@ module.exports = function apiProxy (app) {
     changeOrigin: true
   })
 
-  app.use('/api/signin', authProxy)
-  app.use('/api/signup', authProxy)
-  app.use('/api/token', authProxy)
-  app.use('/api/me', authProxy)
-  app.use('/api/users', authProxy)
-  app.use('/api/verification', authProxy)
-  app.use('/api/categories', contentProxy)
-  app.use('/api/posts', contentProxy)
-  app.use('/api/menus', contentProxy)
-  app.use('/api/tags', contentProxy)
+  app.use([
+      '/api/signin',
+      '/api/signup',
+      '/api/token',
+      '/api/me',
+      '/api/users',
+      '/api/verification'
+    ],
+    authProxy)
+
+  app.use([
+    '/api/categories',
+    '/api/posts',
+    '/api/menus',
+    '/api/tags',
+    '/api/configurations'
+  ], contentProxy)
+
   app.use('/api/assets', assetsProxy)
   app.use('/gp-admin', adminProxy)
 }

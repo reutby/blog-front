@@ -19,7 +19,7 @@ export default {
           }
         case 'post':
           return {
-            name: link.post.name,
+            name: link.post.title,
             kind: link.kind,
             route: {
               name: 'category-post',

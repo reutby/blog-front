@@ -10,13 +10,13 @@
 <script>
   import MenuLink from '../../../components/MenuLink'
   import { ref, createComponent } from '@vue/composition-api'
-  import getMenuLinks from '../../../compositions/main-menu'
+  import useMenuLinks from '../../../compositions/main-menu'
 
   export default createComponent({
     components: { MenuLink },
     setup (_, { root: { $store } }) {
       return {
-        links: getMenuLinks($store),
+        links: useMenuLinks($store),
         active: ref(false),
       }
     }

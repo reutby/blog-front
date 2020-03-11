@@ -41,5 +41,10 @@
 			justify-content: space-between;
 			align-items: center;
 		}
+		.top-header {
+			width: 100%;
+			flex-direction: column;
+			justify-content: flex-start;
+		}
 	}
 </style>

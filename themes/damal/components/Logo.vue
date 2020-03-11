@@ -16,6 +16,7 @@
 		a {
 			text-align: center;
 			flex: 1;
+			padding: 5px 0;
 		}
 
 		.logo {

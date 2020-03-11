@@ -65,6 +65,14 @@
 	}
 
 	@media all and (max-width: 720px) {
-
+		form {
+			padding: 0 10px;
+			width: 100%;
+		}
+		input, button {
+			font-size: 12px;
+			padding: 6px;
+			border-radius: 3px;
+		}
 	}
 </style>

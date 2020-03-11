@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1>{{category.name}}</h1>
+		<h1>Search results for "<i>{{query}}</i>"</h1>
 		<PostsList :posts="posts"/>
 	</div>
 </template>
@@ -11,14 +11,15 @@
   export default {
     components: { PostsList },
     props: {
-      category: Object,
+      query: String,
       posts: Array,
     },
     head () {
+      const title = 'Search results for query: ' + this.query
       return {
-        title: this.category.name,
+        title,
         meta: [
-          { vmid: 'description', name: 'description', content: this.category.name }
+          { vmid: 'description', name: 'description', content: title }
         ]
       }
     }

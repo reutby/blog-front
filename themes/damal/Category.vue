@@ -29,11 +29,4 @@
 	h1 {
 		padding: 10px;
 	}
-
-	section {
-		padding: 10px;
-		margin: 10px;
-		border-top: 1px solid #ccc;
-		border-radius: 5px;
-	}
 </style>

@@ -40,7 +40,7 @@
     head () {
       return {
         link: [
-          { rel: 'stylesheet', href: 'https://s3.amazonaws.com/icomoon.io/114779/Socicon/style.css?u8vidh' }
+          { rel: 'stylesheet', href: '/socicon/css/socicon.min.css' }
         ]
       }
     }

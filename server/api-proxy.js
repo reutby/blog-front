@@ -45,6 +45,9 @@ module.exports = function apiProxy (app) {
     '/api/configurations'
   ], contentProxy)
 
-  app.use('/api/assets', assetsProxy)
+  app.use([
+    '/api/assets',
+    '/api/storage',
+  ], assetsProxy)
   app.use('/gp-admin', adminProxy)
 }

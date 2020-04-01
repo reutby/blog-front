@@ -17,7 +17,7 @@ module.exports = {
   },
   adminPanel: {
     protocol: process.env.ADMIN_PANEL_PROTOCOL || 'http',
-    url: process.env.ADMIN_PANEL_PROTOCOL_URL || 'localhost',
-    port: process.env.ADMIN_PANEL_PROTOCOL_PORT || 3001,
+    url: process.env.ADMIN_PANEL_URL || 'localhost',
+    port: process.env.ADMIN_PANEL_PORT || 3001,
   },
 }

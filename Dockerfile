@@ -1,15 +1,9 @@
 
-FROM node:13.3.0 AS nodeNpm
-COPY package.json package-lock.json ./
-ENV NODE_ENV=DEV
-RUN npm install
-FROM node:alpine
-RUN mkdir /app
+FROM node:13.3.0
 WORKDIR /app
-ENV PORT=3000
 ENV THEME=damal
-COPY --from=nodeNpm node_modules node_modules 
-COPY . .
+ENV PORT=3000
 EXPOSE $PORT
-ENV NODE_ENV=PROD
-CMD npm start
+COPY . .
+RUN export NODE_ENV=development && npm install
+CMD export NODE_ENV=production && npm start

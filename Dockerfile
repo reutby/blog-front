@@ -1,5 +1,5 @@
-
-FROM node:13.3.0
+FROM node:13.3.0-alpine
+RUN apk add make gcc g++ python
 WORKDIR /app
 ENV THEME=damal
 ENV PORT=3000

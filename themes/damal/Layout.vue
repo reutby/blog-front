@@ -9,17 +9,25 @@
 <script>
   import Footer from './components/Footer'
   import Header from './components/Header'
+  import useConfiguration from '../../compositions/app-configuration'
 
   export default {
     components: {
       Header,
       Footer
     },
-    head: {
-      titleTemplate: '%s | greenpress - powerful blog platform',
-      link: [
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Pontano+Sans&display=swap' }
-      ]
+    setup () {
+      return {
+        config: useConfiguration()
+      }
+    },
+    head () {
+      return {
+        titleTemplate: `%s | ${this.config.name} - ${this.config.description}`,
+        link: [
+          { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Pontano+Sans&display=swap' }
+        ]
+      }
     }
   }
 </script>

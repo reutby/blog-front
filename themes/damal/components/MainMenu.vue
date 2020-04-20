@@ -9,10 +9,10 @@
 </template>
 <script>
   import MenuLink from '../../../components/MenuLink'
-  import { ref, createComponent } from '@vue/composition-api'
+  import { ref } from '@vue/composition-api'
   import useMenuLinks from '../../../compositions/main-menu'
 
-  export default createComponent({
+  export default {
     components: { MenuLink },
     setup () {
       return {
@@ -20,7 +20,7 @@
         active: ref(false),
       }
     }
-  })
+  }
 </script>
 <style scoped lang="scss">
 	@import "../colors";

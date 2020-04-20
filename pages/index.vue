@@ -10,8 +10,8 @@
     components: {
       Index,
     },
-    setup (_, { root: { $store } }) {
-      return useHomeState($store)
+    setup () {
+      return useHomeState()
     },
   }
 </script>

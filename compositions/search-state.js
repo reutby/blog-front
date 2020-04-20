@@ -1,6 +1,7 @@
-import { onServerPrefetch, ref, watch } from '@vue/composition-api'
+import { onServerPrefetch, ref, watchEffect, getCurrentInstance } from '@vue/composition-api'
 
-export default function useSearch ($axios, query) {
+export default function useSearch (query) {
+  const { $axios } = getCurrentInstance()
   const posts = ref(null)
 
   function getPosts () {
@@ -9,7 +10,7 @@ export default function useSearch ($axios, query) {
     })
   }
 
-  watch(getPosts)
+  watchEffect(getPosts)
   onServerPrefetch(getPosts)
 
   return {

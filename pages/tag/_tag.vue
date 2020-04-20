@@ -8,8 +8,8 @@
 
   export default {
     components: { Tag },
-    setup (_, { root: { $route, $store } }) {
-      return useTagPosts($store, $route.params.tag)
+    setup () {
+      return useTagPosts()
     },
   }
 </script>

@@ -6,16 +6,14 @@
   import Search from '~/.current_theme/Search'
   import useSearch from '../../compositions/search-state'
   import { ref, watch } from '@vue/composition-api'
+  import { useQueryParam } from '../../compositions/query-param'
 
   export default {
     components: { Search },
-    setup (_, { root: { $axios }, parent: { $route } }) {
-      const query = ref($route.query ? $route.query.q : null)
-
-      watch('$route.query.q', (q) => query.value = q)
-
+    setup () {
+      const query = useQueryParam('q');
       return {
-        ...useSearch($axios, query),
+        ...useSearch(query),
         query,
       }
     }

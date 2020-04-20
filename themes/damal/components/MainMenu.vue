@@ -14,9 +14,9 @@
 
   export default createComponent({
     components: { MenuLink },
-    setup (_, { root: { $store } }) {
+    setup () {
       return {
-        links: useMenuLinks($store),
+        links: useMenuLinks(),
         active: ref(false),
       }
     }

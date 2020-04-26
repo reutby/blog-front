@@ -69,7 +69,7 @@
 		line-height: 150%;
 	}
 
-	.post-content p {
+	.post-content /deep/ p {
 		padding: 10px 0;
 	}
 

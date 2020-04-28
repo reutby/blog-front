@@ -1,7 +1,7 @@
 <template>
 	<header>
 		<div class="top-header">
-			<Logo/>
+			<Logo v-once :logo-url="config.logoUrl" :site-name="config.titleSuffix"/>
 			<SearchForm class="search-form"/>
 		</div>
 		<MainMenu/>
@@ -11,12 +11,16 @@
   import Logo from './Logo'
   import SearchForm from './SearchForm'
   import MainMenu from './MainMenu'
+  import useConfiguration from '../../../compositions/app-configuration'
 
   export default {
     components: {
       Logo,
       SearchForm,
       MainMenu,
+    },
+    setup () {
+      return { config: useConfiguration() }
     }
   }
 </script>

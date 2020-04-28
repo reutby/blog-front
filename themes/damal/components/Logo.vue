@@ -1,6 +1,15 @@
 <template>
-	<nuxt-link to="/"><img class="logo" src="/logo.png" alt="Greenpress blog platform"></nuxt-link>
+	<nuxt-link to="/"><img class="logo" :src="logoUrl || '/logo.png'" :alt="siteName"></nuxt-link>
 </template>
+<script>
+  export default {
+    name: 'Logo',
+    props: {
+      logoUrl: String,
+      siteName: String
+    }
+  }
+</script>
 <style scoped>
 	a {
 		display: block;

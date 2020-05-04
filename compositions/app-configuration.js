@@ -1,41 +1,32 @@
 import Vue from 'vue'
-import { onServerPrefetch, getCurrentInstance } from '@vue/composition-api'
+import { computed, getCurrentInstance, onServerPrefetch } from '@vue/composition-api'
 
 const configuration = Vue.observable({
   loaded: false,
-  name: '',
+  name: 'not loaded',
   logoUrl: '',
   description: '',
   keywords: '',
   slogan: '',
   language: 'en',
   direction: 'ltr',
-  titleSuffix: ''
+  titleSuffix: 'not loaded'
 })
 
-let promise
+export function fetchConfiguration () {
+  const { $axios } = getCurrentInstance()
 
-function getConfiguration ($axios) {
-  if (promise || configuration.loaded) {
-    return promise || Promise.resolve(configuration)
-  }
-  promise = $axios
-    .$get(`api/configurations/app-configuration`)
-    .then(config => {
-      Object.assign(configuration, config.metadata)
+  const promise = $axios.$get(`api/configurations/app-configuration`)
+    .then(({ metadata }) => {
+      Object.assign(configuration, metadata)
       configuration.titleSuffix = `${configuration.name} - ${configuration.slogan}`
     })
     .catch(() => null)
     .finally(() => configuration.loaded = true)
-  return promise
+
+  return onServerPrefetch(() => promise)
 }
 
-export default function useConfiguration () {
-  const { $axios } = getCurrentInstance()
-
-  const promise = getConfiguration($axios)
-
-  onServerPrefetch(() => promise)
-
-  return configuration
+export function useConfiguration () {
+  return computed(() => configuration)
 }

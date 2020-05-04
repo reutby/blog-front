@@ -3,14 +3,14 @@ import { computed, getCurrentInstance, onServerPrefetch } from '@vue/composition
 
 const configuration = Vue.observable({
   loaded: false,
-  name: 'not loaded',
+  name: '',
   logoUrl: '',
   description: '',
   keywords: '',
   slogan: '',
   language: 'en',
   direction: 'ltr',
-  titleSuffix: 'not loaded'
+  titleSuffix: ''
 })
 
 export function fetchConfiguration () {

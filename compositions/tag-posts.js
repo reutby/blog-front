@@ -1,13 +1,14 @@
-import { computed, getCurrentInstance } from '@vue/composition-api'
+import { createNamespacedHelpers } from 'vuex-composition-helpers/dist'
 import { ACTIONS, DATA, name } from '../store/tag/consts'
+
+const { useState } = createNamespacedHelpers(name)
 
 export function fetchTagPosts ($store, $route) {
   return $store.dispatch(name + '/' + ACTIONS.LOAD_POSTS, $route.params.tag)
 }
 
 export function useTagPosts () {
-  const { $store } = getCurrentInstance()
-  return {
-    posts: computed(() => $store.state[name][DATA.POSTS]),
-  }
+  return useState({
+    posts: DATA.POSTS
+  })
 }

@@ -60,7 +60,6 @@
 	@media all and (min-width: 1200px) {
 		.app {
 			margin: 0 auto;
-			width: 95%;
 		}
 	}
 </style>

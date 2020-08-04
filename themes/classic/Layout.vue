@@ -63,12 +63,4 @@
 			width: 95%;
 		}
 	}
-
-	.row {
-		display: flex;
-
-		> * {
-			flex: 1;
-		}
-	}
 </style>

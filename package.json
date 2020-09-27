@@ -1,6 +1,6 @@
 {
   "name": "blog-front",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "vue blog project",
   "author": "David Meir-Levy <davidmeirlevy@gmail.com>",
   "private": false,
@@ -19,6 +19,7 @@
     "cross-env": "^5.2.1",
     "express": "^4.16.4",
     "http-proxy-middleware": "^1.0.4",
+    "node-fetch": "^2.6.1",
     "node-sass": "^4.14.1",
     "nuxt": "^2.14.4",
     "sass-loader": "^9.0.2",

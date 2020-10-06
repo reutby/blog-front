@@ -34,10 +34,8 @@ module.exports = function apiProxy (app) {
 	const meUrl = getProxyTarget(authService) + '/api/me'
 
 	app.use([
-		...authService.proxies,
 		...contentService.proxies,
 		...assetsService.proxies,
-		...adminPanel.proxies
 	], (req, res, next) => {
 		if (!(req.headers.authorization || req.headers.cookie && req.headers.cookie.includes('token='))) {
 			next()

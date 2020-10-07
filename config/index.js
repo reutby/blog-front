@@ -29,7 +29,8 @@ module.exports = {
 			'/api/signup',
 			'/api/token',
 			'/api/me',
-			'/api/users'
+			'/api/users',
+			'/api/logout'
 		])
 	},
 	assetsService: {

@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import useInputValidator from "../../../compositions/useInputValidator";
+import useInputValidator from "~/compositions/useInputValidator";
 import {
   isEmail
-} from "../../../compositions/useInputValidator";
+} from "~/compositions/useInputValidator";
 import ErrorDisplay from "./ErrorDisplay";
 
 export default {

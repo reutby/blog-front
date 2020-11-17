@@ -9,9 +9,9 @@
 	</div>
 </template>
 <script>
-  import MenuLink from '../../../components/MenuLink'
   import { ref } from '@nuxtjs/composition-api'
-  import { useMenuLinks } from '../../../compositions/main-menu'
+  import MenuLink from '~/components/MenuLink'
+  import { useMenuLinks } from '~/compositions/main-menu'
 
   export default {
     components: { MenuLink },

@@ -10,11 +10,11 @@
   </div>
 </template>
 <script>
+  import { computed, useMeta, defineComponent } from '@nuxtjs/composition-api'
   import TopPostsGroup from './components/TopPostsGroup'
   import PostsList from './components/PostsList'
   import TagsBox from './components/TagsBox'
-  import { computed, useMeta, defineComponent } from '@nuxtjs/composition-api'
-  import { useConfiguration } from '../../compositions/app-configuration'
+  import { useConfiguration } from '~/compositions/app-configuration'
   import Loader from './components/Loader'
 
   export default defineComponent({

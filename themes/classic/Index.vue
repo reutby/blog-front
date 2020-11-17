@@ -11,7 +11,7 @@
 <script>
   import PostsList from './components/PostsList'
   import TagsBox from './components/TagsBox'
-  import { useConfiguration } from '../../compositions/app-configuration'
+  import { useConfiguration } from '~/compositions/app-configuration'
   import Loader from './components/Loader'
 
   export default {

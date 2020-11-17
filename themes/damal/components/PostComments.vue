@@ -8,7 +8,7 @@
 </template>
 <script>
   import { computed, watch, useMeta, defineComponent } from '@nuxtjs/composition-api'
-  import { isFrontMounted } from '../compositions/front-mounted'
+  import { isFrontMounted } from '~/compositions/front-mounted'
 
   export default defineComponent({
     name: 'PostComments',

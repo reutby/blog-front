@@ -12,9 +12,9 @@
 	</div>
 </template>
 <script>
-	import { isFrontMounted } from '../compositions/front-mounted'
-	import { locationHref } from '../compositions/location-href'
-	import { computed, useMeta, defineComponent } from '@nuxtjs/composition-api'
+  import { computed, useMeta, defineComponent } from '@nuxtjs/composition-api'
+  import { isFrontMounted } from '~/compositions/front-mounted'
+  import { locationHref } from '~/compositions/location-href'
 
 	export default defineComponent({
 		name: 'SharePost',

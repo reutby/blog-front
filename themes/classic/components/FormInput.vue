@@ -1,6 +1,6 @@
 <template>
 <div class="form-group field">
-  <input v-model="input" :type="type" class="form-field" :placeholder="label" :name="name" required />
+  <input v-model="input" :type="type" class="form-field" :placeholder="label" :name="name" required>
   <label class="form-label">{{ label }}</label>
   <ErrorDisplay v-if="input" :errors="errors" />
 </div>
@@ -8,9 +8,6 @@
 
 <script>
 import useInputValidator from "~/compositions/useInputValidator";
-import {
-  isEmail
-} from "~/compositions/useInputValidator";
 import ErrorDisplay from "./ErrorDisplay";
 
 export default {

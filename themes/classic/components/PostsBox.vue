@@ -19,7 +19,7 @@
 </template>
 
 <script>
-  import { getPostLinkParams } from '../../../compositions/post-link-params'
+  import { getPostLinkParams } from '~/compositions/post-link-params'
 
   export default {
     props: {

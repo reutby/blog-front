@@ -8,9 +8,6 @@
 
 <script>
 import useInputValidator from "~/compositions/useInputValidator";
-import {
-  isEmail
-} from "~/compositions/validators";
 import ErrorDisplay from "./ErrorDisplay";
 
 export default {

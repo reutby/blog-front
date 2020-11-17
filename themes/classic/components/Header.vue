@@ -7,7 +7,7 @@
 <script>
   import Logo from './Logo'
   import MainMenu from './MainMenu'
-  import { useConfiguration } from '../../../compositions/app-configuration'
+  import { useConfiguration } from '~/compositions/app-configuration'
 
   export default {
     components: {

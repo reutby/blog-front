@@ -26,11 +26,11 @@
 </template>
 
 <script>
+  import { computed } from '@nuxtjs/composition-api'
   import PostBreadcrumbs from './components/PostBreadcrumbs'
   import SharePost from './components/SharePost'
   import Tags from './components/Tags'
   import PostComments from './components/PostComments'
-  import { computed } from '@nuxtjs/composition-api'
   import Loader from './components/Loader'
 
   export default {

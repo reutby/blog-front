@@ -16,7 +16,7 @@
 
 <script>
 import Tags from './Tags'
-import { getPostLinkParams, usePostNavigation } from '../../../compositions/post-link-params'
+import { getPostLinkParams, usePostNavigation } from '~/compositions/post-link-params'
 
 export default {
   components: { Tags },

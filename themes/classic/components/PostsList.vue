@@ -21,6 +21,7 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		width: 100%;
+    padding-top: 10px;
 	}
 	@media all and (max-width: 720px) {
 		.posts-list {

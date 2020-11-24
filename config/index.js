@@ -17,7 +17,8 @@ module.exports = {
 			'/api/posts',
 			'/api/menus',
 			'/api/tags',
-			'/api/configurations'
+			'/api/configurations',
+			'/api/blocks'
 		])
 	},
 	authService: {

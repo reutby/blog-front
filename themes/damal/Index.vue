@@ -1,5 +1,6 @@
 <template>
   <div>
+    <main v-html="content" />
     <template v-if="posts && !posts.length">No posts yet.</template>
     <Loader v-if="!posts" />
     <template v-else-if="posts.length">
@@ -19,6 +20,7 @@
 
   export default defineComponent({
     props: {
+      content: String,
       posts: Array,
       tags: Array
     },
@@ -44,6 +46,8 @@
   })
 </script>
 
-<style>
-
+<style scoped>
+  main {
+    padding: 10px;
+  }
 </style>

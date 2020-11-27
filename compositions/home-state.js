@@ -9,6 +9,7 @@ export function fetchHomeData ($store) {
 
 export function useHomeState () {
   return useState({
+    content: DATA.CONTENT,
     posts: DATA.POSTS,
     tags: DATA.TAGS,
   })

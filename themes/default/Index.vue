@@ -1,10 +1,7 @@
 <template>
 	<div>
-		index page
-
-		<p>this is default theme</p>
-		<p>This text should be stored in the blog's config.</p>
-		<PostsList :posts="posts"/>
+    <main v-html="content" />
+    <PostsList :posts="posts"/>
 	</div>
 </template>
 <script>
@@ -12,12 +9,15 @@
 
 	export default {
 		props: {
-			posts: Array,
+      content: String,
+      posts: Array,
 		},
 		components: {PostsList}
 	}
 </script>
 
-<style>
-
+<style scoped>
+  main {
+    padding: 10px;
+  }
 </style>

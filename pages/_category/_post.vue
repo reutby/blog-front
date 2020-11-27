@@ -24,7 +24,7 @@
         meta: [
           { hid: 'description', name: 'description', content: description },
           { hid: 'keywords', name: 'keywords', content: this.post.tags.join(', ') },
-          { hid: 'og:title', name: 'og:image', content: this.post.title },
+          { hid: 'og:title', name: 'og:title', content: this.post.title },
           { hid: 'og:description', name: 'og:description', content: description },
           { hid: 'og:image', name: 'og:image', content: this.post.thumbnail || '' }
         ]

@@ -1,5 +1,5 @@
 <template>
-	<div v-if="post" class="post">
+	<main v-if="post" class="post">
 		<section class="post-header">
 			<h1>{{post.title}}</h1>
 			<p class="image-container"><img v-if="post.thumbnail" :src="post.thumbnail" :alt="post.title"></p>
@@ -21,7 +21,7 @@
 		</div>
 		<SharePost :post="post"/>
 		<PostComments :post="post"/>
-	</div>
+	</main>
 	<Loader v-else/>
 </template>
 
@@ -74,23 +74,6 @@
 	.post-content {
 		padding: 10px 0;
 		line-height: 150%;
-	}
-
-	.post-content /deep/ p {
-		padding: 10px 0;
-	}
-
-	.post-content /deep/ blockquote {
-		margin: 10px;
-		padding: 10px;
-		font-family: monospace;
-		background-color: #000;
-    color: #fff;
-    border-radius: 5px;
-    word-break: break-all;
-    *, a {
-      color: #fff;
-    }
 	}
 
 	.tags-container {

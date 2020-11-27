@@ -1,5 +1,5 @@
 <template>
-	<Post :post="post"/>
+  <Post :post="post" />
 </template>
 <script>
   import Post from '~/.current_theme/Post'
@@ -14,19 +14,19 @@
       return usePostState()
     },
     head () {
+      const description = this.post.short ?
+        this.post.short
+          .substr(0, 100)
+          .replace(/<[^>]*>/g, '') :
+        this.post.title
       return {
         title: this.post.title + ' - ' + this.post.category.name,
         meta: [
-          {
-            hid: 'description',
-            name: 'description',
-            content: this.post.short ?
-              this.post.short
-                .substr(0, 100)
-                .replace(/<[^>]*>/g, '') :
-              this.post.title
-          },
+          { hid: 'description', name: 'description', content: description },
           { hid: 'keywords', name: 'keywords', content: this.post.tags.join(', ') },
+          { hid: 'og:title', name: 'og:image', content: this.post.title },
+          { hid: 'og:description', name: 'og:description', content: description },
+          { hid: 'og:image', name: 'og:image', content: this.post.thumbnail || '' }
         ]
       }
     }

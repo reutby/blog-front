@@ -58,16 +58,42 @@
     flex-direction: column;
   }
 
+
+  p {
+    padding: 10px 0;
+  }
+
+  blockquote {
+    margin: 10px;
+    padding: 10px;
+    font-family: monospace;
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+    word-break: break-all;
+    *, a {
+      color: #fff;
+    }
+  }
+
   @media all and (min-width: 500px) {
     .app {
       margin: 0 auto;
       width: 100%;
+    }
+    .content, article {
+      margin: 0 auto;
+      width: 90%;
     }
   }
 
   @media all and (min-width: 1200px) {
     .app {
       margin: 0 auto;
+    }
+    .content, article {
+      margin: 0 auto;
+      width: 80%;
     }
   }
 </style>

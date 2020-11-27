@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="content">
 		<h1>{{category.name}}</h1>
 		<section v-if="category.content" v-html="category.content"/>
 		<PostsList :posts="posts"/>

@@ -1,7 +1,7 @@
 <template>
   <section @click="navigate">
     <img v-if="post.thumbnail" :src="post.thumbnail" :alt="post.title"/>
-    <div class="content">
+    <div class="post-content">
       <Tags :tags="post.tags"/>
       <h3>
         <nuxt-link :to="getPostLinkParams(post)">
@@ -75,7 +75,7 @@ img {
   transition: all 0.2s ease-in-out;
 }
 
-.content {
+.post-content {
   margin-top: $box-size / 2.4;
   padding: 10px;
   height: $box-size / 1.7;

@@ -8,6 +8,7 @@ module.exports = {
 	port: process.env.PORT || 3000,
 	tenant: process.env.BASIC_TENANT || '0',
 	applicationUrl: process.env.APPLICATION_URL,
+  alternativeHmr: !!process.env.ALTERNATIVE_HMR,
 	contentService: {
 		protocol: process.env.CONTENT_SERVICE_PROTOCOL || 'http',
 		url: process.env.CONTENT_SERVICE_URL || localhost,

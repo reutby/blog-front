@@ -1,4 +1,4 @@
-const { port } = require('./config')
+const { port, alternativeHmr } = require('./config')
 
 module.exports = {
   server: {
@@ -77,5 +77,10 @@ module.exports = {
   },
   render: {
     http2: { push: true }
-  }
+  },
+  watchers: alternativeHmr ? {
+    webpack: {
+      poll: true
+    }
+  } : {},
 }

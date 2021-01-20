@@ -17,7 +17,7 @@ export default {
     if (state[DATA.POSTS] && state[DATA.POSTS].length) {
       return Promise.resolve(state[DATA.POSTS])
     }
-    return this.$axios.$get(`api/posts`, { params: { target: 'front', populate: ['category'] } })
+    return this.$axios.$get(`api/posts?target=front&populate[]=category`)
       .then(list => commit(MUTATIONS.SET_POSTS, list))
   },
   [ACTIONS.LOAD_TAGS] ({ commit, state }) {

@@ -6,7 +6,7 @@ const isWin = process.platform === 'win32';
 
 function getThemePath(theme) {
 	const globalKeyWord = 'global:';
-	return theme.includes(globalKeyWord) ? path.resolve(theme.replace(globalKeyWord, '')) : `themes/${theme}/`; 
+	return theme.includes(globalKeyWord) ? path.resolve(theme.replace(globalKeyWord, '')) : `themes/${theme}/`;
 }
 
 function getLinuxExec(theme) {
@@ -27,6 +27,7 @@ try {
 catch (e) {
 	console.log('previous symlink does not exist.');
 }
+console.log('using theme as mentioned:', themeName);
 console.log('creating theme symlink..');
 execSync(isWin ? getWindowsExec(themeName) : getLinuxExec(themeName));
 console.log('symlink of theme created. you can build the front now.');

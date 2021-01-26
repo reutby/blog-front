@@ -1,5 +1,5 @@
 import { createNamespacedHelpers } from 'vuex-composition-helpers/dist'
-import { ACTIONS, DATA, name } from '../store/tag/consts'
+import { ACTIONS, DATA, name } from '~/store/tag/consts'
 
 const { useState } = createNamespacedHelpers(name)
 
